@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081F9DD61F1FB27000BE726A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F9DD51F1FB27000BE726A /* Array+Extension.swift */; };
+		0867C8741F1EB940003741C9 /* BreadthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867C8731F1EB940003741C9 /* BreadthSearch.swift */; };
+		08BFE2771F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt in Resources */ = {isa = PBXBuildFile; fileRef = 08BFE2761F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt */; };
 		08DC48DA1F1E7B2C00FB677E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48D91F1E7B2C00FB677E /* AppDelegate.swift */; };
 		08DC48DC1F1E7B2C00FB677E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48DB1F1E7B2C00FB677E /* ViewController.swift */; };
 		08DC48DF1F1E7B2C00FB677E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08DC48DD1F1E7B2C00FB677E /* Main.storyboard */; };
 		08DC48E11F1E7B2C00FB677E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08DC48E01F1E7B2C00FB677E /* Assets.xcassets */; };
 		08DC48E41F1E7B2C00FB677E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08DC48E21F1E7B2C00FB677E /* LaunchScreen.storyboard */; };
+		08DC48EE1F1E812B00FB677E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48ED1F1E812B00FB677E /* DataManager.swift */; };
+		08DC48F01F1E863600FB677E /* RomaniaRoutes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */; };
+		08DC48F21F1E8C2400FB677E /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48F11F1E8C2400FB677E /* Agent.swift */; };
+		08DC48F41F1E8CC700FB677E /* DepthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48F31F1E8CC700FB677E /* DepthSearch.swift */; };
+		08DC48F61F1E8DB300FB677E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48F51F1E8DB300FB677E /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		081F9DD51F1FB27000BE726A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		0867C8731F1EB940003741C9 /* BreadthSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreadthSearch.swift; sourceTree = "<group>"; };
+		08BFE2761F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldOfVacuumCleaner.txt; sourceTree = "<group>"; };
 		08DC48D61F1E7B2C00FB677E /* ArtificialInteligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtificialInteligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08DC48D91F1E7B2C00FB677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08DC48DB1F1E7B2C00FB677E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +33,11 @@
 		08DC48E01F1E7B2C00FB677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08DC48E31F1E7B2C00FB677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08DC48E51F1E7B2C00FB677E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08DC48ED1F1E812B00FB677E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RomaniaRoutes.txt; sourceTree = "<group>"; };
+		08DC48F11F1E8C2400FB677E /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		08DC48F31F1E8CC700FB677E /* DepthSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthSearch.swift; sourceTree = "<group>"; };
+		08DC48F51F1E8DB300FB677E /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +51,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		081F9DD41F1FB24800BE726A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				081F9DD51F1FB27000BE726A /* Array+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		08BFE2781F1F81C60055ACB4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				08DC48F31F1E8CC700FB677E /* DepthSearch.swift */,
+				0867C8731F1EB940003741C9 /* BreadthSearch.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		08BFE2791F1F82A30055ACB4 /* Agent */ = {
+			isa = PBXGroup;
+			children = (
+				08DC48F11F1E8C2400FB677E /* Agent.swift */,
+			);
+			name = Agent;
+			sourceTree = "<group>";
+		};
+		08BFE27A1F1F83660055ACB4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				08BFE2761F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt */,
+				08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */,
+				08DC48ED1F1E812B00FB677E /* DataManager.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		08BFE27B1F1F83700055ACB4 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				08DC48F51F1E8DB300FB677E /* Node.swift */,
+			);
+			name = Node;
+			sourceTree = "<group>";
+		};
 		08DC48CD1F1E7B2C00FB677E = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +113,11 @@
 		08DC48D81F1E7B2C00FB677E /* ArtificialInteligence */ = {
 			isa = PBXGroup;
 			children = (
+				08BFE27A1F1F83660055ACB4 /* Data */,
+				08BFE27B1F1F83700055ACB4 /* Node */,
+				08BFE2791F1F82A30055ACB4 /* Agent */,
+				08BFE2781F1F81C60055ACB4 /* Search */,
+				081F9DD41F1FB24800BE726A /* Extensions */,
 				08DC48D91F1E7B2C00FB677E /* AppDelegate.swift */,
 				08DC48DB1F1E7B2C00FB677E /* ViewController.swift */,
 				08DC48DD1F1E7B2C00FB677E /* Main.storyboard */,
@@ -124,6 +188,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DC48F01F1E863600FB677E /* RomaniaRoutes.txt in Resources */,
+				08BFE2771F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt in Resources */,
 				08DC48E41F1E7B2C00FB677E /* LaunchScreen.storyboard in Resources */,
 				08DC48E11F1E7B2C00FB677E /* Assets.xcassets in Resources */,
 				08DC48DF1F1E7B2C00FB677E /* Main.storyboard in Resources */,
@@ -137,8 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0867C8741F1EB940003741C9 /* BreadthSearch.swift in Sources */,
 				08DC48DC1F1E7B2C00FB677E /* ViewController.swift in Sources */,
+				08DC48F21F1E8C2400FB677E /* Agent.swift in Sources */,
+				08DC48EE1F1E812B00FB677E /* DataManager.swift in Sources */,
+				08DC48F61F1E8DB300FB677E /* Node.swift in Sources */,
+				08DC48F41F1E8CC700FB677E /* DepthSearch.swift in Sources */,
 				08DC48DA1F1E7B2C00FB677E /* AppDelegate.swift in Sources */,
+				081F9DD61F1FB27000BE726A /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +376,7 @@
 				08DC48EA1F1E7B2C00FB677E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
