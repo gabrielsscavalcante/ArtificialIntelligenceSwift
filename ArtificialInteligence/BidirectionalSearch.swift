@@ -25,23 +25,38 @@ class BidirectionalSearch {
     var visited2: [String] = []
     var states: [String: [String]] = [:]
     var finalState: String!
+    var initialState: String!
     var bidirectionalType: BidirectionalType
+    var isStateFound: Int = 0
     
-    init(states: [String: [String]], finalState: String, bidirectionalType: BidirectionalType) {
+    init(states: [String: [String]], initialState: String, finalState: String, bidirectionalType: BidirectionalType) {
         self.states = states
+        self.initialState = initialState
         self.finalState = finalState
         self.bidirectionalType = bidirectionalType
     }
     
     func isGoalState() -> Bool {
-        if currentState1.state == currentState2.state || currentState1.state == finalState {
+        if currentState1.state == currentState2.state || currentState1.state == finalState || currentState2.state == initialState {
+            if currentState1.state == currentState2.state {
+                addToVisited()
+                print("CRUZAMENTO EM \(currentState1.state)")
+                self.isStateFound = 0
+            } else if currentState1.state == finalState {
+                self.isStateFound = 1
+            } else {
+                self.isStateFound = 2
+            }
             return true
         } else {
             return false
         }
     }
     
-    func search(from initialState: String) -> [String] {
+    func search() -> [String] {
+        
+        print("\n\nBIDIRECTIONAL SEARCH")
+        print("\nBorders:")
         
         if currentState1 == nil {
             currentState1 = Node(state: initialState)
@@ -53,12 +68,16 @@ class BidirectionalSearch {
         
         while !isGoalState() {
             self.addToBorders(getSucessors(from: currentState1), getSucessors(from: currentState2))
-            self.visited1.append(currentState1.state)
-            self.visited2.append(currentState1.state)
+            self.addToVisited()
             self.removeFromBorders()
         }
         
-        return []//getPath()
+        return getPath()
+    }
+    
+    func addToVisited() {
+        self.visited1.append(currentState1.state)
+        self.visited2.append(currentState2.state)
     }
     
     func getSucessors(from node: Node) -> [Node] {
@@ -121,25 +140,48 @@ class BidirectionalSearch {
             self.currentState2 = border2.first
             self.border2.removeFirst()
             break
-        default:
-            break
         }
     }
     
-//    func getPath() -> [String] {
-//        var path: [String] = []
-//        path.append(finalState)
-//        var node = currentState
-//        repeat {
-//            if node!.parent != nil {
-//                path.append(node!.parent!.state)
-//                node = node!.parent
-//            }
-//        } while(node!.parent != nil)
-//        
-//        print("\nPath:")
-//        return path
-//    }
+    func getPath() -> [String] {
+        var path1: [String] = getPath(from: currentState1)
+        var path2: [String] = getPath(from: currentState2)
+        
+        print("\nPath:")
+        if isStateFound == 0 {
+            return addToPath(path1, path2)
+        } else if isStateFound == 1 {
+            path1.appendAtBeginning(newItem: finalState)
+            return path1
+        } else {
+            path2.appendAtBeginning(newItem: initialState)
+            return path2
+        }
+    }
+    
+    func getPath(from state: Node) -> [String] {
+        var path: [String] = []
+        var node = state
+        repeat {
+            if node.parent != nil {
+                path.append(node.parent!.state)
+                node = node.parent!
+            }
+        } while(node.parent != nil)
+        
+        return path
+    }
+    
+    func addToPath(_ path1: [String], _ path2: [String]) -> [String] {
+        var path: [String] = []
+        for state in path1 {
+            path.append(state)
+        }
+        for state in path2 {
+            path.appendAtBeginning(newItem: state)
+        }
+        return path
+    }
     
     func printBorders() {
         var statesBorder1:[String] = []

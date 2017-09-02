@@ -16,14 +16,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let initialState = RomaniaCities.Arad.rawValue
-        let finalState = RomaniaCities.Lugoj.rawValue
+        let finalState = RomaniaCities.Bucharest.rawValue
         let problem = KindOfProblem.Romania
         let states = data.getData(from: problem)
         
         let agent = Agent(initialState: initialState, finalState: finalState, states: states, problem: problem)
         
-//        print(agent.problemSolvingWithBreadthSearch())
-//        print(agent.problemSolvingWithDepthSearch())
+        print(agent.problemSolvingWithBreadthSearch())
+        print(agent.problemSolvingWithDepthSearch())
         print(agent.problemSolvingWithBidirectionalSearch(.DepthXBreadth))
     }
 
