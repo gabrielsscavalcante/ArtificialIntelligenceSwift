@@ -36,4 +36,10 @@ class Agent {
         
         return depthSearch.search(from: initialState)
     }
+    
+    func problemSolvingWithBidirectionalSearch(_ type: BidirectionalType) -> [String] {
+        let bidirectionalSearch = BidirectionalSearch(states: states, finalState: finalState, bidirectionalType: type)
+        
+        return bidirectionalSearch.search(from: initialState)
+    }
 }
