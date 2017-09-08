@@ -1,8 +1,8 @@
-{"LDD": ["LDD", "RDD", "LCD"],
-"RDD": ["RDD", "LDD", "RDC"],
-"LCD": ["LCD", "LCD", "RCD"],
-"RCD": ["RCD", "LCD", "RCC"],
-"LDC": ["LDC", "RDC", "LCC"],
-"RDC": ["RDC", "RDC", "LDC"],
-"LCC": ["LCC", "LCC", "RCC"],
-"RCC": ["RCC", "RCC", "LCC"]}
+{"LDD": [{"LDD": 1}, {"RDD": 1}, {"LCD": 1}],
+"RDD": [{"RDD": 1}, {"LDD": 1}, {"RDC": 1}],
+"LCD": [{"LCD": 1}, {"LCD": 1}, {"RCD": 1}],
+"RCD": [{"RCD": 1}, {"LCD": 1}, {"RCC": 1}],
+"LDC": [{"LDC": 1}, {"RDC": 1}, {"LCC": 1}],
+"RDC": [{"RDC": 1}, {"RDC": 1}, {"LDC": 1}],
+"LCC": [{"LCC": 1}, {"LCC": 1}, {"RCC": 1}],
+"RCC": [{"RCC": 1}, {"RCC": 1}, {"LCC": 1}]}

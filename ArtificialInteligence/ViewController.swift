@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let initialState = RomaniaCities.Arad.rawValue
         let finalState = RomaniaCities.Bucharest.rawValue
         let problem = KindOfProblem.Romania
-        let states = data.getData(from: problem)
+        let states = data.getStates(from: problem)
         
         let agent = Agent(initialState: initialState, finalState: finalState, states: states, problem: problem)
         
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         print(agent.problemSolvingWithDepthSearch())
         print(agent.problemSolvingWithBidirectionalSearch(.DepthXBreadth))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

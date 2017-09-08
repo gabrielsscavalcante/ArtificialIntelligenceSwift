@@ -23,13 +23,13 @@ class BidirectionalSearch {
     var currentState2: Node!
     var visited1: [String] = []
     var visited2: [String] = []
-    var states: [String: [String]] = [:]
+    var states: [State] = []
     var finalState: String!
     var initialState: String!
     var bidirectionalType: BidirectionalType
     var isStateFound: Int = 0
     
-    init(states: [String: [String]], initialState: String, finalState: String, bidirectionalType: BidirectionalType) {
+    init(states: [State], initialState: String, finalState: String, bidirectionalType: BidirectionalType) {
         self.states = states
         self.initialState = initialState
         self.finalState = finalState
@@ -84,9 +84,9 @@ class BidirectionalSearch {
         var successors: [Node] = []
         
         for state in states {
-            if state.key == node.state {
-                for key in state.value {
-                    let newNode = Node(state: key)
+            if state.getKey() == node.state {
+                for successor in state.getSuccessors() {
+                    let newNode = Node(state: successor.getKey())
                     newNode.setParent(node)
                     successors.append(newNode)
                 }

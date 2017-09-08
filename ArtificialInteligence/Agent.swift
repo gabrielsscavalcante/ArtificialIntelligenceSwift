@@ -12,13 +12,13 @@ class Agent {
     
     var initialState: String!
     var finalState: String!
-    var states: [String : [String]]!
+    var states: [State]!
     var problem: KindOfProblem!
     
     var successor: [Node]? = nil
     var cost: Int = 0
     
-    init(initialState: String, finalState: String, states: [String : [String]], problem: KindOfProblem) {
+    init(initialState: String, finalState: String, states: [State], problem: KindOfProblem) {
         self.initialState = initialState
         self.finalState = finalState
         self.states = states
@@ -30,13 +30,13 @@ class Agent {
         
         return breadthSearch.search(from: initialState)
     }
-    
+
     func problemSolvingWithDepthSearch() -> [String] {
         let depthSearch = DepthSearch(states: states, finalState: finalState)
         
         return depthSearch.search(from: initialState)
     }
-    
+
     func problemSolvingWithBidirectionalSearch(_ type: BidirectionalType) -> [String] {
         let bidirectionalSearch = BidirectionalSearch(states: states,initialState: initialState, finalState: finalState, bidirectionalType: type)
         

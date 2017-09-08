@@ -37,8 +37,26 @@ enum RomaniaCities: String {
 
 class DataManager {
     
-    func getData(from problem: KindOfProblem) -> [String : [String]] {
-        return readText(from: problem.rawValue) as! [String : [String]]
+    func getStates(from problem: KindOfProblem) -> [State] {
+        let datas = readTextWithCost(from: problem.rawValue) as! [String: [[String: Int]]]
+        
+        var states: [State] = []
+        
+        for data in datas {
+            var state: State!
+            var successors: [Successor] = []
+            for key in data.value {
+                var successor: Successor!
+                for value in key {
+                    successor = Successor(key: value.key, cost: value.value)
+                    successors.append(successor)
+                }
+                state = State(key: data.key, successors: successors)
+            }
+            states.append(state)
+        }
+        
+        return states
     }
     
     func readText(from fileName: String) -> [String: Any]? {
@@ -59,6 +77,18 @@ class DataManager {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             } catch {
                 print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
+    func readTextWithCost(from fileName: String) -> [String: Any]? {
+        if let path = Bundle.main.path(forResource: fileName, ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                return self.convertToDictionary(text: data)
+            } catch {
+                print(error)
             }
         }
         return nil
