@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 enum KindOfProblem: String {
     case Romania = "RomaniaRoutes"
@@ -17,22 +18,22 @@ enum RomaniaCities: String {
     case Arad = "Arad"
     case Zerind = "Zerind"
     case Bucharest = "Bucharest"
-    case Orades = "Orades"
+    case Oradea = "Oradea"
     case Timisoara = "Timisoara"
     case Sibiu = "Sibiu"
     case Lugoj = "Lugoj"
-    case Mehadis = "Mehadis"
-    case Dobrets = "Dobrets"
-    case Cralova = "Cralova"
-    case Rimnicu_Vilces = "Rimnicu Vilces"
+    case Mehadia = "Mehadia"
+    case Dobreta = "Dobreta"
+    case Craiova = "Craiova"
+    case Rimnicu_Vilcea = "Rimnicu Vilcea"
     case Pitesti = "Pitesti"
     case Fagaras = "Fagaras"
-    case Glurgiu = "Glurgiu"
+    case Giurgiu = "Giurgiu"
     case Urziceni = "Urziceni"
-    case Hiraova = "Hiraova"
-    case Vaslul = "Vaslul"
+    case Hirsova = "Hirsova"
+    case Vaslui = "Vaslui"
     case Iasi = "Iasi"
-    case Nesmt = "Nesmt"
+    case Neamt = "Neamt"
 }
 
 class DataManager {

@@ -13,6 +13,7 @@
 		0809D6BD1F633E3A00F78F9B /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6BC1F633E3A00F78F9B /* Agent.swift */; };
 		0809D6BF1F633E4200F78F9B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6BE1F633E4200F78F9B /* State.swift */; };
 		0809D6C11F633E4800F78F9B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6C01F633E4800F78F9B /* DataManager.swift */; };
+		0809D6C31F63410900F78F9B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6C21F63410900F78F9B /* Location.swift */; };
 		081F9DD61F1FB27000BE726A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F9DD51F1FB27000BE726A /* Array+Extension.swift */; };
 		08BFE2771F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt in Resources */ = {isa = PBXBuildFile; fileRef = 08BFE2761F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt */; };
 		08DC48DA1F1E7B2C00FB677E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48D91F1E7B2C00FB677E /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		0809D6BC1F633E3A00F78F9B /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		0809D6BE1F633E4200F78F9B /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		0809D6C01F633E4800F78F9B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0809D6C21F63410900F78F9B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		081F9DD51F1FB27000BE726A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		08BFE2761F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldOfVacuumCleaner.txt; sourceTree = "<group>"; };
 		08DC48D61F1E7B2C00FB677E /* ArtificialInteligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtificialInteligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				08BFE2761F1F811C0055ACB4 /* WorldOfVacuumCleaner.txt */,
 				08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */,
 				0809D6C01F633E4800F78F9B /* DataManager.swift */,
+				0809D6C21F63410900F78F9B /* Location.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0809D6BB1F633E2F00F78F9B /* BidirectionalSearch.swift in Sources */,
+				0809D6C31F63410900F78F9B /* Location.swift in Sources */,
 				0809D6C11F633E4800F78F9B /* DataManager.swift in Sources */,
 				08DC48DC1F1E7B2C00FB677E /* ViewController.swift in Sources */,
 				08DC48F61F1E8DB300FB677E /* Node.swift in Sources */,
