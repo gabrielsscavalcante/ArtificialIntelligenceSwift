@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0803D8D51F64FB5300078A5E /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0803D8D41F64FB5300078A5E /* Annotation.swift */; };
 		0809D6B91F633E2F00F78F9B /* DepthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6B61F633E2F00F78F9B /* DepthSearch.swift */; };
 		0809D6BA1F633E2F00F78F9B /* BreadthSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6B71F633E2F00F78F9B /* BreadthSearch.swift */; };
 		0809D6BB1F633E2F00F78F9B /* BidirectionalSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6B81F633E2F00F78F9B /* BidirectionalSearch.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0803D8D41F64FB5300078A5E /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		0809D6B61F633E2F00F78F9B /* DepthSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthSearch.swift; sourceTree = "<group>"; };
 		0809D6B71F633E2F00F78F9B /* BreadthSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreadthSearch.swift; sourceTree = "<group>"; };
 		0809D6B81F633E2F00F78F9B /* BidirectionalSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidirectionalSearch.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				08DC48E01F1E7B2C00FB677E /* Assets.xcassets */,
 				08DC48E21F1E7B2C00FB677E /* LaunchScreen.storyboard */,
 				08DC48E51F1E7B2C00FB677E /* Info.plist */,
+				0803D8D41F64FB5300078A5E /* Annotation.swift */,
 			);
 			path = ArtificialInteligence;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				0809D6BF1F633E4200F78F9B /* State.swift in Sources */,
 				0809D6BD1F633E3A00F78F9B /* Agent.swift in Sources */,
 				081F9DD61F1FB27000BE726A /* Array+Extension.swift in Sources */,
+				0803D8D51F64FB5300078A5E /* Annotation.swift in Sources */,
 				0809D6B91F633E2F00F78F9B /* DepthSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
