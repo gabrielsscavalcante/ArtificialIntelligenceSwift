@@ -42,4 +42,10 @@ class Agent {
         
         return bidirectionalSearch.search()
     }
+    
+    func problemSolvingWithUniformedSearch() -> [String] {
+        let uniformedSearch = UniformedSearch(states: states, finalState: finalState)
+        
+        return uniformedSearch.search(from: initialState)
+    }
 }

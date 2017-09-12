@@ -12,6 +12,7 @@ class Node {
     var parent: Node?
     var state: String = ""
     var successors = [Node]()
+    var cost: Int = 0
     
     init(state: String) {
         self.state = state
@@ -23,5 +24,9 @@ class Node {
     
     func setSuccessors(_ successors: [Node]) {
         self.successors = successors
+    }
+    
+    func setCost(_ cost: Int) {
+        self.cost = cost
     }
 }

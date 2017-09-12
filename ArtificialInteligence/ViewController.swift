@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var finalState: String!
     var path: [String] = []
     var search: String!
-    var searchs : [String] = ["Depth", "Breadth", "Bidirectional"]
+    var searchs : [String] = ["Depth", "Breadth", "Bidirectional", "Uniformed"]
     var agent: Agent!
     
     override func viewDidLoad() {
@@ -69,6 +69,9 @@ class ViewController: UIViewController {
             break
         case "Breadth":
             path = agent.problemSolvingWithBreadthSearch()
+            break
+        case "Uniformed":
+            path = agent.problemSolvingWithUniformedSearch()
             break
         default:
             break
