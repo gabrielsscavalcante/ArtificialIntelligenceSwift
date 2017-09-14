@@ -27,6 +27,7 @@
 		08DC48E41F1E7B2C00FB677E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08DC48E21F1E7B2C00FB677E /* LaunchScreen.storyboard */; };
 		08DC48F01F1E863600FB677E /* RomaniaRoutes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */; };
 		08DC48F61F1E8DB300FB677E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DC48F51F1E8DB300FB677E /* Node.swift */; };
+		08E5E1771F6AA28B00972AB5 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E5E1761F6AA28B00972AB5 /* SearchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		08DC48E51F1E7B2C00FB677E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RomaniaRoutes.txt; sourceTree = "<group>"; };
 		08DC48F51F1E8DB300FB677E /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		08E5E1761F6AA28B00972AB5 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		08BFE2781F1F81C60055ACB4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				08E5E1761F6AA28B00972AB5 /* SearchManager.swift */,
 				0809D6B61F633E2F00F78F9B /* DepthSearch.swift */,
 				0809D6B71F633E2F00F78F9B /* BreadthSearch.swift */,
 				0809D6B81F633E2F00F78F9B /* BidirectionalSearch.swift */,
@@ -245,6 +248,7 @@
 				0809D6BD1F633E3A00F78F9B /* Agent.swift in Sources */,
 				081F9DD61F1FB27000BE726A /* Array+Extension.swift in Sources */,
 				0803D8D51F64FB5300078A5E /* Annotation.swift in Sources */,
+				08E5E1771F6AA28B00972AB5 /* SearchManager.swift in Sources */,
 				0809D6B91F633E2F00F78F9B /* DepthSearch.swift in Sources */,
 				084B7F851F6A1B63006DF7F6 /* GreedySearch.swift in Sources */,
 			);

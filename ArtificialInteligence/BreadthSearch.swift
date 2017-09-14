@@ -15,18 +15,11 @@ class BreadthSearch {
     var finalState: String!
     var states: [State]
     var visited: [String] = []
+    let searchManager = SearchManager()
     
     init(states: [State], finalState: String) {
         self.states = states
         self.finalState = finalState
-    }
-    
-    func isGoalState(_ node: Node) -> Bool {
-        if node.state == finalState {
-            return true
-        } else {
-            return false
-        }
     }
     
     func search(from initialState: String) -> [String] {
@@ -38,14 +31,14 @@ class BreadthSearch {
             currentState = Node(state: initialState)
         }
         
-        while !isGoalState(currentState) {
+        while !searchManager.isGoalState(currentState, finalState) {
             self.addToBorder(getSucessors(from: currentState))
             self.visited.append(currentState.state)
             self.currentState = border.last
             self.border.removeLast()
         }
         
-        return getPath()
+        return searchManager.getPath(currentState, finalState)
     }
     
     func getSucessors(from node: Node) -> [Node] {
@@ -72,29 +65,6 @@ class BreadthSearch {
         }
         
         print(currentState.state)
-        printBorder()
-    }
-    
-    func getPath() -> [String] {
-        var path: [String] = []
-        path.append(finalState)
-        var node = currentState
-        repeat {
-            if node!.parent != nil {
-                path.append(node!.parent!.state)
-                node = node!.parent
-            }
-        } while(node!.parent != nil)
-        
-        print("\nPath:")
-        return path
-    }
-    
-    func printBorder() {
-        var statesBorder:[String] = []
-        for node in border {
-            statesBorder.append(node.state)
-        }
-        print(statesBorder)
+        searchManager.printBorder(border)
     }
 }
