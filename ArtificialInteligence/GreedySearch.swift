@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UniformedSearch {
+class GreedySearch {
     
     var border: [Node] = []
     var currentState: Node!
@@ -32,7 +32,7 @@ class UniformedSearch {
     
     func search(from initialState: String) -> [String] {
         
-        print("\n\nUNIFORMED SEARCH")
+        print("\n\nGREEDY SEARCH")
         print("\nBorders:")
         
         if currentState == nil {
@@ -42,7 +42,7 @@ class UniformedSearch {
         while !isGoalState(currentState) {
             self.addToBorder(getSucessors(from: currentState))
             self.visited.append(currentState.state)
-            self.currentState = border.last
+            self.currentState = border.first
             self.border.removeLast()
         }
         
@@ -58,9 +58,9 @@ class UniformedSearch {
                     
                     let newNode = Node(state: successor.getKey())
                     newNode.setParent(node)
-                    
-                    let newCost = node.cost+successor.getCost()
-                    newNode.setCost(newCost)
+                    newNode.setHeuristicCost(successor.getHeuristicCost())
+                    print(newNode.state)
+                    print(newNode.heuristicCost)
                     
                     successors.append(newNode)
                 }
@@ -72,16 +72,16 @@ class UniformedSearch {
     
     func addToBorder(_ successors: [Node]) {
         if !visited.contains(currentState.state) {
-            for successor in successors {
+            let sortedSuccessors = successors.sorted(by: {$0.0.heuristicCost > $0.1.heuristicCost})
+            for successor in sortedSuccessors {
+                print(successor.heuristicCost)
                 self.border.appendAtBeginning(newItem:successor)
             }
         }
         
-        self.border.sort(by: {$0.0.cost > $0.1.cost})
-        
-        print(currentState.state)
-        print(currentState.cost)
-        printBorder()
+//        print(currentState.state)
+//        print(currentState.heuristicCost)
+//        printBorder()
     }
     
     func getPath() -> [String] {

@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var finalState: String!
     var path: [String] = []
     var search: String!
-    var searchs : [String] = ["Depth", "Breadth", "Bidirectional", "Uniformed"]
+    var searchs : [String] = ["Depth", "Breadth", "Bidirectional", "Uniformed", "Greedy", "A*"]
     var agent: Agent!
     
     override func viewDidLoad() {
@@ -72,6 +72,14 @@ class ViewController: UIViewController {
             break
         case "Uniformed":
             path = agent.problemSolvingWithUniformedSearch()
+            break
+        case "Greedy":
+            if initialState == "Bucharest" || finalState == "Bucharest" {
+                path = agent.problemSolvingWithGreedySearch()
+            }
+            break
+        case "A*":
+            
             break
         default:
             break

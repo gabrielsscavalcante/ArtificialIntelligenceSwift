@@ -48,4 +48,10 @@ class Agent {
         
         return uniformedSearch.search(from: initialState)
     }
+    
+    func problemSolvingWithGreedySearch() -> [String] {
+        let greedySearch = GreedySearch(states: states, finalState: finalState)
+        
+        return greedySearch.search(from: initialState)
+    }
 }

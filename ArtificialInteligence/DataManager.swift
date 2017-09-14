@@ -39,7 +39,8 @@ enum RomaniaCities: String {
 class DataManager {
     
     func getStates(from problem: KindOfProblem) -> [State] {
-        let datas = readTextWithCost(from: problem.rawValue) as! [String: [[String: Int]]]
+        let datas = readText(from: problem.rawValue) as! [String: [[String: Int]]]
+        let heuristicDatas = readText(from: "RomaniaHeuristics") as! [String: Int]
         
         var states: [State] = []
         
@@ -49,7 +50,8 @@ class DataManager {
             for key in data.value {
                 var successor: Successor!
                 for value in key {
-                    successor = Successor(key: value.key, cost: value.value)
+                    let heuristicCost = getHeuristic(from: heuristicDatas, with: value.key)
+                    successor = Successor(key: value.key, cost: value.value, heuristicCost: heuristicCost)
                     successors.append(successor)
                 }
                 state = State(key: data.key, successors: successors)
@@ -58,6 +60,16 @@ class DataManager {
         }
         
         return states
+    }
+    
+    func getHeuristic(from heuristics: [String: Int], with value: String) -> Int {
+        for heuristic in heuristics {
+            if heuristic.key == value {
+                return heuristic.value
+            }
+        }
+        
+        return 0
     }
     
     func readText(from fileName: String) -> [String: Any]? {
@@ -78,18 +90,6 @@ class DataManager {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             } catch {
                 print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
-    
-    func readTextWithCost(from fileName: String) -> [String: Any]? {
-        if let path = Bundle.main.path(forResource: fileName, ofType: "txt") {
-            do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                return self.convertToDictionary(text: data)
-            } catch {
-                print(error)
             }
         }
         return nil
