@@ -22,6 +22,7 @@ class SearchManager {
         } while(node.parent != nil)
         
         print("\nPath:")
+        print(path)
         return path
     }
     

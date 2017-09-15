@@ -35,7 +35,7 @@ class AStarSearch: SearchProtocol {
             self.addToBorder(getSucessors(from: currentState))
             self.visited.append(currentState.state)
             self.currentState = border.first
-            self.border.removeLast()
+            self.border.removeFirst()
         }
         
         return searchManager.getPath(currentState, finalState)
