@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         self.mapView.removeAnnotations(mapView.annotations)
         for city in path {
             let geocoder = CLGeocoder()
-            geocoder.geocodeAddressString("\(city), Romênia") { placemarks, error in
+            geocoder.geocodeAddressString("\(city), Romania") { placemarks, error in
                 let placemark = placemarks?.first
                 print(city)
                 let lat = (placemark?.location?.coordinate.latitude)!

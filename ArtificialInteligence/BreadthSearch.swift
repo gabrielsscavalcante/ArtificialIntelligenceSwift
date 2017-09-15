@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BreadthSearch {
+class BreadthSearch: SearchProtocol {
     
     var border: [Node] = []
     var currentState: Node!

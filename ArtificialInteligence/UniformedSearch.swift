@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UniformedSearch {
+class UniformedSearch: SearchProtocol {
     
     var border: [Node] = []
     var currentState: Node!

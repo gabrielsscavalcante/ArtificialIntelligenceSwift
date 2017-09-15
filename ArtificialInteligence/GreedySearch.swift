@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GreedySearch {
+class GreedySearch: SearchProtocol {
     
     var border: [Node] = []
     var currentState: Node!

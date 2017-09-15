@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DepthSearch {
+class DepthSearch: SearchProtocol {
     
     var border: [Node] = []
     var currentState: Node!
