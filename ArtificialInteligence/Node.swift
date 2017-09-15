@@ -14,6 +14,7 @@ class Node {
     var successors = [Node]()
     var cost: Int = 0
     var heuristicCost: Int = 0
+    var totalCost: Int = 0
     
     init(state: String) {
         self.state = state
@@ -33,5 +34,9 @@ class Node {
     
     func setHeuristicCost(_ heuristicCost: Int) {
         self.heuristicCost = heuristicCost
+    }
+    
+    func setTotalCost(_ totalCost: Int) {
+        self.totalCost = totalCost
     }
 }
