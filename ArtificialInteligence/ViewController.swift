@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var backPickerView: UIView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var textView: UITextView!
     
     let data = DataManager()
     var states: [State] = []
@@ -41,6 +42,9 @@ class ViewController: UIViewController {
         self.backPickerView.clipsToBounds = true
         self.searchButton.layer.cornerRadius = 5
         self.searchButton.clipsToBounds = true
+        self.textView.layer.cornerRadius = 5
+        self.textView.clipsToBounds = true
+        self.textView.text = "Romania Problem"
         pickerView.delegate = self
         pickerView.dataSource = self
         mapView.delegate = self
@@ -86,14 +90,16 @@ class ViewController: UIViewController {
             break
         }
         
+        textView.text = "Romania Problem\n\(path)"
+        
         self.mapView.removeAnnotations(self.mapView.annotations)
+        self.mapView.removeOverlays(self.mapView.overlays)
         getAnnotations(with: path) { (annotation) in
             self.mapView.addAnnotation(annotation)
         }
         
         Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) {
             _ in
-            self.mapView.removeOverlays(self.mapView.overlays)
             self.getRoute(in: self.mapView)
         }
     }
@@ -154,24 +160,26 @@ extension ViewController: MKMapViewDelegate {
     
     func getRoute(in mapView: MKMapView) {
         let annotations = mapView.annotations
-        for i in 0..<annotations.count-1 {
-            let source = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i].coordinate))
-            let destination = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i+1].coordinate))
-            let request = MKDirectionsRequest()
-            request.source = source
-            request.destination = destination
-            request.requestsAlternateRoutes = false
-            
-            let directions = MKDirections(request: request)
-            
-            directions.calculate(completionHandler: {(response, error) in
+        if annotations.count > 1 {
+            for i in 0..<annotations.count-1 {
+                let source = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i].coordinate))
+                let destination = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i+1].coordinate))
+                let request = MKDirectionsRequest()
+                request.source = source
+                request.destination = destination
+                request.requestsAlternateRoutes = false
                 
-                if error != nil {
-                    print("Error getting directions")
-                } else {
-                    self.showRoute(response!)
-                }
-            })
+                let directions = MKDirections(request: request)
+                
+                directions.calculate(completionHandler: {(response, error) in
+                    
+                    if error != nil {
+                        print("Error getting directions")
+                    } else {
+                        self.showRoute(response!)
+                    }
+                })
+            }
         }
     }
     
@@ -186,7 +194,7 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor.blue
+        renderer.strokeColor = UIColor().random
         renderer.lineWidth = 5.0
         return renderer
     }
