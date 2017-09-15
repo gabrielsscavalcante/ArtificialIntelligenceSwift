@@ -30,7 +30,7 @@ class Annotation : NSObject, MKAnnotation {
         let view = MKAnnotationView(annotation: self, reuseIdentifier: "myCustomAnnotation")
         view.isEnabled = true
         let pinImage = UIImage(named: "pin")!
-        view.image = pinImage.imageResize(sizeChange: CGSize(width: 65, height: 50))
+        view.image = pinImage.imageResize(sizeChange: CGSize(width: 50, height: 50))
         view.canShowCallout = true
         
         return view

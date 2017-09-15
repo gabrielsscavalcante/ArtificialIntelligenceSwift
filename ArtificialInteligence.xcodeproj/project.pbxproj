@@ -14,7 +14,6 @@
 		0809D6BD1F633E3A00F78F9B /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6BC1F633E3A00F78F9B /* Agent.swift */; };
 		0809D6BF1F633E4200F78F9B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6BE1F633E4200F78F9B /* State.swift */; };
 		0809D6C11F633E4800F78F9B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6C01F633E4800F78F9B /* DataManager.swift */; };
-		0809D6C31F63410900F78F9B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0809D6C21F63410900F78F9B /* Location.swift */; };
 		081F9DD61F1FB27000BE726A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081F9DD51F1FB27000BE726A /* Array+Extension.swift */; };
 		084B7F851F6A1B63006DF7F6 /* GreedySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084B7F841F6A1B63006DF7F6 /* GreedySearch.swift */; };
 		084B7F871F6A3153006DF7F6 /* RomaniaHeuristics.txt in Resources */ = {isa = PBXBuildFile; fileRef = 084B7F861F6A3153006DF7F6 /* RomaniaHeuristics.txt */; };
@@ -42,7 +41,6 @@
 		0809D6BC1F633E3A00F78F9B /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		0809D6BE1F633E4200F78F9B /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		0809D6C01F633E4800F78F9B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		0809D6C21F63410900F78F9B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		081F9DD51F1FB27000BE726A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		084B7F841F6A1B63006DF7F6 /* GreedySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreedySearch.swift; sourceTree = "<group>"; };
 		084B7F861F6A3153006DF7F6 /* RomaniaHeuristics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RomaniaHeuristics.txt; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				08DC48EF1F1E863600FB677E /* RomaniaRoutes.txt */,
 				084B7F861F6A3153006DF7F6 /* RomaniaHeuristics.txt */,
 				0809D6C01F633E4800F78F9B /* DataManager.swift */,
-				0809D6C21F63410900F78F9B /* Location.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -257,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0809D6BB1F633E2F00F78F9B /* BidirectionalSearch.swift in Sources */,
-				0809D6C31F63410900F78F9B /* Location.swift in Sources */,
 				0809D6C11F633E4800F78F9B /* DataManager.swift in Sources */,
 				08DC48DC1F1E7B2C00FB677E /* ViewController.swift in Sources */,
 				08DC48F61F1E8DB300FB677E /* Node.swift in Sources */,

@@ -44,8 +44,7 @@ class ViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         mapView.delegate = self
-        let location = Location()
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.arad, 1550000, 1550000)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: 46.1833333, longitude: 21.3166667), 1550000, 1550000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -87,22 +86,15 @@ class ViewController: UIViewController {
             break
         }
         
-        createAnnotations()
-    }
-    
-    func createAnnotations() {
-        self.mapView.removeAnnotations(mapView.annotations)
-        for city in path {
-            let geocoder = CLGeocoder()
-            geocoder.geocodeAddressString("\(city), Romania") { placemarks, error in
-                let placemark = placemarks?.first
-                print(city)
-                let lat = (placemark?.location?.coordinate.latitude)!
-                let long = (placemark?.location?.coordinate.longitude)!
-                let annotation = Annotation(location: CLLocationCoordinate2D(latitude: lat, longitude: long) , title: city)
-                self.mapView.addAnnotation(annotation)
-                self.mapView.setCenter(annotation.coordinate, animated: true)
-            }
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        getAnnotations(with: path) { (annotation) in
+            self.mapView.addAnnotation(annotation)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) {
+            _ in
+            self.mapView.removeOverlays(self.mapView.overlays)
+            self.getRoute(in: self.mapView)
         }
     }
 }
@@ -144,5 +136,58 @@ extension ViewController: MKMapViewDelegate {
         } else {
             return nil
         }
+    }
+    
+    func getAnnotations(with path: [String], _ completation: @escaping (_ annotation: Annotation) -> ()) {
+        for city in path {
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString("\(city), Romania") { placemarks, error in
+                let placemark = placemarks?.first
+                print(city)
+                if let lat = placemark?.location?.coordinate.latitude, let long = placemark?.location?.coordinate.longitude {
+                    let annotation = Annotation(location: CLLocationCoordinate2D(latitude: lat, longitude: long) , title: city)
+                    completation(annotation)
+                }
+            }
+        }
+    }
+    
+    func getRoute(in mapView: MKMapView) {
+        let annotations = mapView.annotations
+        for i in 0..<annotations.count-1 {
+            let source = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i].coordinate))
+            let destination = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i+1].coordinate))
+            let request = MKDirectionsRequest()
+            request.source = source
+            request.destination = destination
+            request.requestsAlternateRoutes = false
+            
+            let directions = MKDirections(request: request)
+            
+            directions.calculate(completionHandler: {(response, error) in
+                
+                if error != nil {
+                    print("Error getting directions")
+                } else {
+                    self.showRoute(response!)
+                }
+            })
+        }
+    }
+    
+    func showRoute(_ response: MKDirectionsResponse) {
+        
+        for route in response.routes {
+            
+            mapView.add(route.polyline,
+                        level: MKOverlayLevel.aboveRoads)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 5.0
+        return renderer
     }
 }
