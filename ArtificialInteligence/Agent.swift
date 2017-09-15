@@ -54,4 +54,10 @@ class Agent {
         
         return greedySearch.search(from: initialState)
     }
+    
+    func problemSolvingWithAStarSearch() -> [String] {
+        let aStarSearch = AStarSearch(states: states, finalState: finalState)
+        
+        return aStarSearch.search(from: initialState)
+    }
 }

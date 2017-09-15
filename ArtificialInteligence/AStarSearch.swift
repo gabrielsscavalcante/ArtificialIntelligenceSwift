@@ -50,9 +50,15 @@ class AStarSearch: SearchProtocol {
                     
                     let newNode = Node(state: successor.getKey())
                     newNode.setParent(node)
-                    newNode.setHeuristicCost(successor.getHeuristicCost())
-                    print(newNode.state)
-                    print(newNode.heuristicCost)
+                    
+                    let newCost = node.cost+successor.getCost()
+                    newNode.setCost(newCost)
+                    
+                    let heuristicCost = successor.getHeuristicCost()
+                    newNode.setHeuristicCost(heuristicCost)
+                    
+                    let totalCost = newCost + heuristicCost
+                    newNode.setTotalCost(totalCost)
                     
                     successors.append(newNode)
                 }
@@ -66,14 +72,13 @@ class AStarSearch: SearchProtocol {
         if !visited.contains(currentState.state) {
             let sortedSuccessors = successors.sorted(by: {$0.0.totalCost > $0.1.totalCost})
             for successor in sortedSuccessors {
-                print(successor.heuristicCost)
                 self.border.appendAtBeginning(newItem:successor)
             }
         }
         
-        //        print(currentState.state)
-        //        print(currentState.heuristicCost)
-        searchManager.printBorder(border)
+        print(currentState.state)
+        print(currentState.totalCost)
+//        searchManager.printBorder(border)
     }
 }
 

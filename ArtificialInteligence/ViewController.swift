@@ -79,7 +79,9 @@ class ViewController: UIViewController {
             }
             break
         case "A*":
-            
+            if initialState == "Bucharest" || finalState == "Bucharest" {
+                path = agent.problemSolvingWithAStarSearch()
+            }
             break
         default:
             break
