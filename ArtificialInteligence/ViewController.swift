@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
         switch search {
         case "Bidirectional":
-            path = agent.problemSolvingWithBidirectionalSearch(.BreadthXDepth)
+            path = agent.problemSolvingWithBidirectionalSearch(.BreadthXBreadth)
             break
         case "Depth":
             path = agent.problemSolvingWithDepthSearch()

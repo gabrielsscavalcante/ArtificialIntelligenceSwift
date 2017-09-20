@@ -69,12 +69,12 @@ class AStarSearch: SearchProtocol {
     }
     
     func addToBorder(_ successors: [Node]) {
-        if !visited.contains(currentState.state) {
-            let sortedSuccessors = successors.sorted(by: {$0.0.totalCost > $0.1.totalCost})
+//        if !visited.contains(currentState.state) {
+            let sortedSuccessors = successors.sorted{$0.0.totalCost > $0.1.totalCost}
             for successor in sortedSuccessors {
                 self.border.appendAtBeginning(newItem:successor)
             }
-        }
+//        }
         
         print(currentState.state)
         print(currentState.totalCost)

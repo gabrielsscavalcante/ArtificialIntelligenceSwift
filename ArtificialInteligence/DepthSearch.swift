@@ -35,7 +35,11 @@ class DepthSearch: SearchProtocol {
             self.addToBorder(getSucessors(from: currentState))
             self.visited.append(currentState.state)
             self.currentState = border.first
-            self.border.removeFirst()
+            if self.border.count != 0 {
+                self.border.removeFirst()
+            } else {
+                return ["Does not have a path for this situation"]
+            }
         }
         
         return searchManager.getPath(currentState, finalState)

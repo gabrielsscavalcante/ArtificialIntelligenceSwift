@@ -35,7 +35,11 @@ class BreadthSearch: SearchProtocol {
             self.addToBorder(getSucessors(from: currentState))
             self.visited.append(currentState.state)
             self.currentState = border.last
-            self.border.removeLast()
+            if self.border.count != 0 {
+                self.border.removeLast()
+            } else {
+                return ["Does not have a path for this situation"]
+            }
         }
         
         return searchManager.getPath(currentState, finalState)
