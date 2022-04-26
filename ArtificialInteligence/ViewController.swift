@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         mapView.delegate = self
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: 46.1833333, longitude: 21.3166667), 1550000, 1550000)
+        let coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 46.1833333, longitude: 21.3166667), latitudinalMeters: 1550000, longitudinalMeters: 1550000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -164,7 +164,7 @@ extension ViewController: MKMapViewDelegate {
             for i in 0..<annotations.count-1 {
                 let source = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i].coordinate))
                 let destination = MKMapItem(placemark: MKPlacemark(coordinate: annotations[i+1].coordinate))
-                let request = MKDirectionsRequest()
+                let request = MKDirections.Request()
                 request.source = source
                 request.destination = destination
                 request.requestsAlternateRoutes = false
@@ -183,11 +183,11 @@ extension ViewController: MKMapViewDelegate {
         }
     }
     
-    func showRoute(_ response: MKDirectionsResponse) {
+    func showRoute(_ response: MKDirections.Response) {
         
         for route in response.routes {
             
-            mapView.add(route.polyline,
+            mapView.addOverlay(route.polyline,
                         level: MKOverlayLevel.aboveRoads)
         }
     }

@@ -36,7 +36,7 @@ class Route {
             
         )
         
-        let request = MKDirectionsRequest()
+        let request = MKDirections.Request()
         
         self.getMapItemFor(location: sourceLocation) { sourceItem, error in
             

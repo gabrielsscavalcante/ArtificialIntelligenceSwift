@@ -73,7 +73,7 @@ class UniformedSearch: SearchProtocol {
             }
 //        }
         
-        self.border.sort(by: {$0.0.cost > $0.1.cost})
+        self.border.sort(by: { $0.cost > $1.cost })
         
         print(currentState.state)
         print(currentState.cost)
